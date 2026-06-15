@@ -10,16 +10,8 @@ import VideoDemo from './components/ui/video-autoplay.tsx'
 // Import from examples
 import { NavigationMenuDemo } from './examples/navigation-menu.tsx'
 import Hero from './examples/hero.tsx'
-import CarouselDemo from './examples/carousel.tsx'
-
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "../src/components/ui/navigation-menu"
+import CarouselProduct from './examples/carousel-product.tsx'
+import CarouselBlog from './examples/carousel-blog.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -29,7 +21,8 @@ createRoot(document.getElementById('root')!).render(
       <VideoDemo 
         className="aspect-video mx-auto mt-20 rounded-lg w-full max-w-4xl"
       />
-      <CarouselDemo />
+      <CarouselProduct />
+      <CarouselBlog />
       <Footer2 />
 
     </BrowserRouter>
