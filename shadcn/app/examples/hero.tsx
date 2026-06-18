@@ -1,8 +1,6 @@
 import { BackgroundBeams } from "../components/ui/background-beam"
-import App from "../App"
 import TextGenerateEffect from "../components/text-generation"
 import { Button } from "../components/ui/button"
-import VideoDemo from "../components/ui/video-autoplay"
 
 function Hero() {
   return (
