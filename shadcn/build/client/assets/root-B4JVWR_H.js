@@ -1,1 +1,0 @@
-import{D as e,a as t,d as n,i as r,s as i,t as a,u as o}from"./jsx-runtime-BwTbRuAH.js";/* empty css                */var s=a(),c=e(function(){return(0,s.jsxs)(`html`,{lang:`en`,children:[(0,s.jsxs)(`head`,{children:[(0,s.jsx)(t,{}),(0,s.jsx)(r,{})]}),(0,s.jsxs)(`body`,{children:[(0,s.jsx)(i,{}),(0,s.jsx)(n,{}),(0,s.jsx)(o,{})]})]})});export{c as default};

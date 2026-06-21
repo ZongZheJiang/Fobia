@@ -1,6 +1,7 @@
 import { BackgroundBeams } from "../components/ui/background-beam"
 import TextGenerateEffect from "../components/text-generation"
 import { Button } from "../components/ui/button"
+import Link from "next/dist/client/link"
 
 function Hero() {
   return (
@@ -17,11 +18,11 @@ function Hero() {
           />
         </div>
         <div className="container mx-auto px-4 flex items-center justify-center gap-6 mt-10 relative z-10">
-          <Button className="bg-white text-black hover:bg-gray-200 flex items-center mr-10">
+          <Button variant={"modern"} className="bg-black text-white hover:black">
             Documentations
           </Button>
-          <Button className="bg-white text-black hover:bg-gray-200 flex items-center ml-10">
-            Get Started
+          <Button variant={"modern"} className="bg-black text-white hover:black">
+            <Link href="/download">Get Started</Link>
           </Button>
         </div>
       </div>

@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image";
 
 import {
   NavigationMenu,
@@ -12,6 +13,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "../components/ui/navigation-menu"
+
+import ReactImg from "../public/fobia-logo.jpeg"
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -53,8 +56,13 @@ const components: { title: string; href: string; description: string }[] = [
 
 export const NavigationMenuDemo = () => {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="my-2 mx-2">
       <NavigationMenuList>
+        <NavigationMenuItem className="mr-2">
+          <Link href="/">
+            <Image src={ReactImg} alt="Description" width={60} height={40}></Image>
+          </Link>
+        </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
           <NavigationMenuContent>
