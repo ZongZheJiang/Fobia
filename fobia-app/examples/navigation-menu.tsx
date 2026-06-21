@@ -14,6 +14,8 @@ import {
   navigationMenuTriggerStyle,
 } from "../components/ui/navigation-menu"
 
+import { Button } from "../components/ui/button"
+
 import ReactImg from "../public/fobia-logo.jpeg"
 
 const components: { title: string; href: string; description: string }[] = [
@@ -101,6 +103,9 @@ export const NavigationMenuDemo = () => {
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
+      <Button>
+        Download
+      </Button>
     </NavigationMenu>
   )
 }
