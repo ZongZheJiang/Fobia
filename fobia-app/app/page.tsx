@@ -11,6 +11,7 @@ import { NavigationMenuDemo } from "../examples/navigation-menu"
 import Hero from "../examples/hero"
 import CarouselProduct from "../examples/carousel-product"
 import CarouselBlog from "../examples/carousel-blog"
+import DownloadCards from "@/examples/download-cards"
 
 export function Home () {
   return (
@@ -21,6 +22,7 @@ export function Home () {
         className="aspect-video mx-auto mt-20 rounded-lg w-full max-w-4xl"
       />
       <CarouselProduct />
+      <DownloadCards />
       <CarouselBlog />
       <Footer2 />
     </div>
