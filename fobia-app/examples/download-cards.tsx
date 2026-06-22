@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle, } from "../components/ui/card"
 
+import Link from "next/dist/client/link"
 import { Button } from "../components/ui/button"
 
 function DownloadCards() {
@@ -17,8 +18,12 @@ function DownloadCards() {
                     <CardTitle className="text-center">Title</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">Content</CardContent>
-                <CardFooter>
-                    <Button variant="modern">Download</Button>
+                <CardFooter className="justify-center">
+                    <Button variant="modern">
+                        <Link href="/download">
+                            Download for Apple Silicon
+                        </Link>
+                    </Button>
                 </CardFooter>
             </Card>
             <Card className="w-md mx-4">
@@ -26,8 +31,12 @@ function DownloadCards() {
                     <CardTitle className="text-center">Title</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">Content</CardContent>
-                <CardFooter>
-                    <Button variant="modern">Download</Button>
+                <CardFooter className="justify-center">
+                    <Button variant="modern">                        
+                        <Link href="/download">
+                            Download for Intel
+                        </Link>
+                    </Button>
                 </CardFooter>
             </Card>
         </div>

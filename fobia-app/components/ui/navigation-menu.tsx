@@ -102,13 +102,13 @@ function NavigationMenuViewport({
   return (
     <div
       className={cn(
-        "absolute top-full inset-x-0 z-50 flex justify-center -left-4"
+        "absolute top-full inset-x-0 z-50 flex justify-center"
       )}
     >
       <NavigationMenuPrimitive.Viewport
         data-slot="navigation-menu-viewport"
         className={cn(
-          "origin-top relative mt-1.5 h-(--radix-navigation-menu-viewport-height) w-full overflow-hidden rounded-lg bg-white text-popover-foreground shadow-lg ring-1 ring-foreground/10 duration-200",
+          "origin-top relative mt-1.5 h-(--radix-navigation-menu-viewport-height) w-full overflow-hidden rounded-lg bg-white text-popover-foreground shadow-lg ring-1 ring-foreground/10 duration-200 ",
           className
         )}
         {...props}

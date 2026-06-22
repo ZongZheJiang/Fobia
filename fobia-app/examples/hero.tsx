@@ -1,3 +1,5 @@
+"use client"
+
 import { BackgroundBeams } from "../components/ui/background-beam"
 import TextGenerateEffect from "../components/text-generation"
 import { Button } from "../components/ui/button"

@@ -2,6 +2,7 @@ import "../globals.css"
 
 import { Button } from "../../components/ui/button"
 import { NavigationMenuDemo } from "../../examples/navigation-menu"
+import Link from "next/dist/client/link"
 
 export function Download () {
   return (
@@ -9,8 +10,14 @@ export function Download () {
       <NavigationMenuDemo />
       <h1 className="title">Download Shadcn</h1>
       <p className="description">You can download the latest version of Shadcn from our official website.</p>
-      <Button variant={"modern"} className="download-button" >Download Now</Button>
-      <Button variant={"modern"} className="download-button" >Return to Home</Button>
+      <Button variant={"modern"} className="download-button" >
+        Download Now
+      </Button>
+      <Button variant={"modern"} className="download-button" >
+        <Link href="/">
+          Return to Home
+        </Link>
+      </Button>
     </div>
   )
 }

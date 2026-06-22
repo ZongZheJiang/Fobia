@@ -103,7 +103,7 @@ export const NavigationMenuDemo = () => {
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
-      <Button>
+      <Button className="mr-4">
         Download
       </Button>
     </NavigationMenu>
