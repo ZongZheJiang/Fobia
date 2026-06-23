@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
 } from "../components/ui/carousel"
 
-function CarouselProduct() {
+function CarouselAudiences() {
   return (
     <div>
         <div className="text-left mt-20 mx-40">
@@ -47,4 +47,4 @@ function CarouselProduct() {
   )
 }
 
-export default CarouselProduct
+export default CarouselAudiences

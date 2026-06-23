@@ -8,7 +8,8 @@ import { Footer2 } from "../components/footer2"
 // Import from examples
 import { NavigationMenuDemo } from "../examples/navigation-menu"
 import Hero from "../examples/hero"
-import CarouselProduct from "../examples/carousel-product"
+import ProductSummary from "@/examples/product-summary";
+import CarouselAudiences from "../examples/carousel-audiences"
 import CarouselBlog from "../examples/carousel-blog"
 import DownloadCards from "@/examples/download-cards"
 import VideoDemo from "@/examples/video-demo";
@@ -25,7 +26,8 @@ export function Home () {
           <footer className="h-[80vh]"></footer>
         </div>
       </div>
-      <CarouselProduct />
+      <ProductSummary />
+      <CarouselAudiences />
       <DownloadCards />
       <CarouselBlog />
       <Footer2 />

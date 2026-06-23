@@ -12,8 +12,8 @@ function Hero() {
       <div className="relative z-10 text-center">
         <div>
           <TextGenerateEffect 
-          className="text-6xl text-center mx-40 text-white"
-          words="We provide free decentralised computing power to empower communities of builders and coders." 
+          className="text-6xl/20 text-center mx-60 text-white"
+          words="Turbocharge your computing capabilities now" 
           filter={true}
           duration={0.5}
           staggerDelay={0.2}
