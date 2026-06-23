@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedGpuFanIcon from '../components/animated-gpu-fan-icon';
 import PixelBlast from '../components/pixelblast';
@@ -25,7 +25,7 @@ function splitAtO(word: string) {
 }
 
 const Welcome: React.FC = () => {
-  const navigate = useNavigate();
+  const navigate = useRouter();
   const [bladeRotation, setBladeRotation] = useState(0);
   const [exit, setExit] = useState(false);
   const [progress, setProgress] = useState(0);
