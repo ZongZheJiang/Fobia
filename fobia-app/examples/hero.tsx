@@ -12,7 +12,7 @@ function Hero() {
       <div className="relative z-10 text-center">
         <div>
           <TextGenerateEffect 
-          className="text-6xl/20 text-center mx-60 text-white"
+          className="text-4xl/16 md:text-6xl/20 text-center mx-[10%] text-white"
           words="Turbocharge your computing capabilities now" 
           filter={true}
           duration={0.5}

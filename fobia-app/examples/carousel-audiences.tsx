@@ -9,10 +9,10 @@ import {
 
 function CarouselAudiences() {
   return (
-    <div>
-        <div className="text-left mt-20 mx-40">
-            <h1 className="text-3xl font-bold">Use Cases: Cool Text to wow the user.</h1>
-            <h2 className="text-xl text-right">Cool description that blows them off their feet</h2>
+    <div className="mx-[10%]">
+        <div className="text-left mt-20">
+            <h1 className="text-xl md:text-3xl font-bold mb-8">Use Cases: Cool Text to wow the user.</h1>
+            <h2 className="text-md md:text-xl text-right">Cool description that blows them off their feet</h2>
         </div>
         <div className="container mx-auto my-20 flex items-center justify-center">
             <Carousel 

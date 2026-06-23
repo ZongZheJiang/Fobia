@@ -3,9 +3,9 @@ import { AspectRatio } from "../components/ui/aspect-ratio"
 
 function ProductSummary() {
     return (
-        <div className="w-max-2xl items-center mx-40">
+        <div className="w-max-2xl items-center mx-[10%]">
             <h2
-            className="text-5xl font-bold mb-40 mr-80"
+            className="text-xl md:text-3xl font-bold mb-40 mr-[10%]"
             >
                 Fobia provides free decentralised computing power to empower communities of builders and coders.</h2>
             <div className="container flex justify-between items-center">
