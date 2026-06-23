@@ -10,7 +10,7 @@ function ProductSummary() {
                 Fobia provides free decentralised computing power to empower communities of builders and coders.</h2>
             <div className="container flex justify-between items-center">
                 <h2>Description of Subproduct</h2>
-                <div className="rounded-lg bg-muted h-120 w-120"></div>
+                <div className="rounded-xl bg-muted h-120 w-120"></div>
             </div>
         </div>
     )

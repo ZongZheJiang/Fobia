@@ -1,7 +1,9 @@
+"use client"
+
 import { Effect, EffectComposer, EffectPass, RenderPass } from 'postprocessing';
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import './PixelBlast.css';
+import '../app/index.css';
 
 type PixelBlastVariant = 'square' | 'circle' | 'triangle' | 'diamond';
 

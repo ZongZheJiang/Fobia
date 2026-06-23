@@ -58,9 +58,9 @@ const components: { title: string; href: string; description: string }[] = [
 
 export const NavigationMenuDemo = () => {
   return (
-    <NavigationMenu className="my-2 mx-2">
+    <NavigationMenu className="my-2">
       <NavigationMenuList>
-        <NavigationMenuItem className="mr-2">
+        <NavigationMenuItem className="mx-4">
           <Link href="/">
             <Image src={ReactImg} alt="Description" width={60} height={40}></Image>
           </Link>

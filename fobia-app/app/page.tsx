@@ -12,6 +12,7 @@ import ProductSummary from "@/examples/product-summary";
 import CarouselAudiences from "../examples/carousel-audiences"
 import CarouselBlog from "../examples/carousel-blog"
 import DownloadCards from "@/examples/download-cards"
+import HeroDownload from "@/examples/hero-download";
 import VideoDemo from "@/examples/video-demo";
 
 export function Home () {
@@ -29,6 +30,7 @@ export function Home () {
       <ProductSummary />
       <CarouselAudiences />
       <DownloadCards />
+      <HeroDownload />
       <CarouselBlog />
       <Footer2 />
     </div>
