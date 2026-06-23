@@ -15,13 +15,22 @@ function CarouselProduct() {
             <h2 className="text-xl text-right">Cool description that blows them off their feet</h2>
         </div>
         <div className="container mx-auto my-20 flex items-center justify-center">
-            <Carousel className="w-full max-w-[12rem] sm:max-w-2xl flex justify-center">
+            <Carousel 
+            className="w-full max-w-6xl flex justify-center"
+            opts={{
+                align: "start",
+                loop: true,
+            }}
+            >
                 <CarouselContent className="w-full">
                     {Array.from({ length: 5 }).map((_, index) => (
-                    <CarouselItem key={index} className="basis-1/2">
+                    <CarouselItem 
+                    key={index} 
+                    className="w-full basis-[85%] md:basis-[70%]"
+                    >
                         <div className="p-1">
                         <Card>
-                            <CardContent className="flex aspect-square items-center justify-center p-6">
+                            <CardContent className="flex aspect-video items-center justify-center p-6">
                             <span className="text-4xl font-semibold">{index + 1}</span>
                             </CardContent>
                         </Card>
