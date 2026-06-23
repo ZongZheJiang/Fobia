@@ -11,9 +11,10 @@ function CarouselProduct() {
   return (
     <div>
         <div className="text-left mt-20 mx-40">
-            <h2 className="text-3xl font-bold">Use Cases: Cool Text to wow the user.</h2>
+            <h1 className="text-3xl font-bold">Use Cases: Cool Text to wow the user.</h1>
+            <h2 className="text-xl text-right">Cool description that blows them off their feet</h2>
         </div>
-        <div className="container mx-auto mt-20 flex items-center justify-center">
+        <div className="container mx-auto my-20 flex items-center justify-center">
             <Carousel className="w-full max-w-[12rem] sm:max-w-2xl flex justify-center">
                 <CarouselContent className="w-full">
                     {Array.from({ length: 5 }).map((_, index) => (
