@@ -23,7 +23,7 @@ function CarouselAudiences() {
             }}
             >
                 <CarouselContent className="w-full">
-                    {Array.from({ length: 5 }).map((_, index) => (
+                    {Array.from({ length: 4 }).map((_, index) => (
                     <CarouselItem 
                     key={index} 
                     className="w-full basis-[85%] md:basis-[70%]"

@@ -28,7 +28,7 @@ function Hero() {
         </div>
         <div className="container mx-auto px-4 flex items-center justify-center gap-6 mt-10 relative z-10">
           <Button variant={"modern"} className="bg-zinc-950 text-white hover:bg-zinc-800">
-            Documentations
+            <Link href="/documentation">Documentation</Link>
           </Button>
           <Button variant={"modern"} className="bg-zinc-950 text-white hover:bg-zinc-800">
             <Link href="/download">Get Started</Link>

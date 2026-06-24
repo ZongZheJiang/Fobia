@@ -1,4 +1,4 @@
-import "../globals.css"
+import "../index.css"
 
 import { Button } from "../../components/ui/button"
 import { NavigationMenuDemo } from "../../examples/navigation-menu"
@@ -6,7 +6,7 @@ import Link from "next/dist/client/link"
 
 export function Download () {
   return (
-    <div className="container">
+    <div>
       <NavigationMenuDemo />
       <h1 className="title">Download Shadcn</h1>
       <p className="description">You can download the latest version of Shadcn from our official website.</p>

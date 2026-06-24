@@ -20,39 +20,27 @@ import ReactImg from "../public/fobia-logo.jpeg"
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Documentation",
+    href: "/documentation",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Description for Documentation",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Blog",
+    href: "/blog",
     description:
-      "For sighted users to preview content available behind a link.",
+      "Description for Blog",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
+    title: "Community",
+    href: "/community",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "Description for Community",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    title: "About",
+    href: "/about",
+    description: "Description for About Team",
   },
 ]
 
@@ -82,7 +70,7 @@ export const NavigationMenuDemo = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:flex">
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -99,12 +87,12 @@ export const NavigationMenuDemo = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/">Docs</Link>
+            <Link href="/documentation">Docs</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
       <Button className="mr-4">
-        Download
+        <Link href="/download">Download</Link>
       </Button>
     </NavigationMenu>
   )

@@ -5,7 +5,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "../components/ui/carousel-old"
+} from "../components/ui/carousel"
+import { Button } from "../components/ui/button"
 
 function CarouselBlog() {
   return (
@@ -15,17 +16,18 @@ function CarouselBlog() {
         </div>
         <div className="container mx-auto mt-20 flex items-center justify-center">
             <Carousel 
-            className="w-full max-w-[12rem] sm:max-w-2xl flex justify-center"
+            className="w-full  max-w-6xl flex justify-center"
             opts={{
                 align: "start",
                 loop: true,
+                slidesToScroll: 3,
             }}
             >
                 <CarouselContent className="w-full">
-                    {Array.from({ length: 5 }).map((_, index) => (
+                    {Array.from({ length: 6 }).map((_, index) => (
                     <CarouselItem 
                     key={index} 
-                    className="basis-[85%] md:basis-[70%]"
+                    className="basis-1/3"
                     >
                         <div className="p-1">
                         <Card>
@@ -35,6 +37,7 @@ function CarouselBlog() {
                         </Card>
                         <h1>Sample Heading</h1>
                         <h2>Sample Text</h2>
+                        <Button>Go to Blogpost</Button>
                         </div>
                     </CarouselItem>
                     ))}
