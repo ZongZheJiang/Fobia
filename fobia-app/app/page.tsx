@@ -8,12 +8,11 @@ import { Footer2 } from "../components/footer2"
 // Import from examples
 import { NavigationMenuDemo } from "../examples/navigation-menu"
 import Hero from "../examples/hero"
-import ProductSummary from "@/examples/product-summary";
+import ProductSummary from "@/examples/product-summary"
 import CarouselAudiences from "../examples/carousel-audiences"
 import CarouselBlog from "../examples/carousel-blog"
-import DownloadCards from "@/examples/download-cards"
-import HeroDownload from "@/examples/hero-download";
-import VideoDemo from "@/examples/video-demo";
+import HeroDownload from "@/examples/hero-download"
+import VideoDemo from "@/examples/video-demo"
 
 export function Home () {
   return (
@@ -29,7 +28,6 @@ export function Home () {
       </div>
       <ProductSummary />
       <CarouselAudiences />
-      <DownloadCards />
       <HeroDownload />
       <CarouselBlog />
       <Footer2 />

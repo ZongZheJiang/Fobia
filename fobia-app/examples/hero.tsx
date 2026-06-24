@@ -1,6 +1,7 @@
 "use client"
 
 import { BackgroundBeams } from "../components/ui/background-beam"
+import PixelBlast from "@/components/pixelblast"
 import TextGenerateEffect from "../components/text-generation"
 import { Button } from "../components/ui/button"
 import Link from "next/dist/client/link"
@@ -8,7 +9,13 @@ import Link from "next/dist/client/link"
 function Hero() {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-neutral-950">
-      <BackgroundBeams />
+      <div className="absolute inset-0">
+        <PixelBlast
+          variant="square"
+          color="#701bbf"
+          className="h-120 w-[80%]"
+        />
+      </div>
       <div className="relative z-10 text-center">
         <div>
           <TextGenerateEffect 
