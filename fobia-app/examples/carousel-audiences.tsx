@@ -1,4 +1,5 @@
 import { Card, CardContent } from "../components/ui/card"
+import { Button } from "@/components/ui/button"
 import {
   Carousel,
   CarouselContent,
@@ -6,6 +7,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../components/ui/carousel"
+
+import { AUDIENCEPOSTS } from "@/data/audienceposts"
 
 function CarouselAudiences() {
   return (
@@ -23,7 +26,7 @@ function CarouselAudiences() {
             }}
             >
                 <CarouselContent className="w-full">
-                    {Array.from({ length: 4 }).map((_, index) => (
+                    {/* {Array.from({ length: 4 }).map((_, index) => (
                     <CarouselItem 
                     key={index} 
                     className="w-full basis-[85%] md:basis-[70%]"
@@ -36,6 +39,38 @@ function CarouselAudiences() {
                         </Card>
                         </div>
                     </CarouselItem>
+                    ))} */}
+                    {AUDIENCEPOSTS.map((post) => (
+                        <CarouselItem key={post.id} className="w-full basis-[85%] md:basis-[70%]">
+                            <div className="p-1">
+                            <Card className="overflow-hidden">
+                                <CardContent className="flex aspect-video items-center justify-center p-0 relative bg-muted">
+                                {post.mediaType === "video" ? (
+                                    <video
+                                    src={post.mediaUrl}
+                                    className="h-full w-full object-cover"
+                                    controls
+                                    preload="metadata"
+                                    playsInline
+                                    muted
+                                    />
+                                ) : (
+                                    <img
+                                    src={post.mediaUrl}
+                                    className="h-full w-full object-cover"
+                                    loading="lazy"
+                                    />
+                                )}
+                                </CardContent>
+                            </Card>
+
+                            <div className="mt-4 space-y-2">
+                                <Button className="w-full" variant="secondary">
+                                View Use Case
+                                </Button>
+                            </div>
+                            </div>
+                        </CarouselItem>
                     ))}
                 </CarouselContent>
                 <CarouselPrevious />

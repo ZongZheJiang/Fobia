@@ -28,6 +28,7 @@ type CarouselContextProps = {
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  activeIndex: number // Added active index to context types
 } & CarouselProps
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
@@ -60,11 +61,13 @@ function Carousel({
   )
   const [canScrollPrev, setCanScrollPrev] = React.useState(false)
   const [canScrollNext, setCanScrollNext] = React.useState(false)
+  const [activeIndex, setActiveIndex] = React.useState(0) // Added active index state
 
   const onSelect = React.useCallback((api: CarouselApi) => {
     if (!api) return
     setCanScrollPrev(api.canScrollPrev())
     setCanScrollNext(api.canScrollNext())
+    setActiveIndex(api.selectedScrollSnap()) // Update active index on select
   }, [])
 
   const scrollPrev = React.useCallback(() => {
@@ -116,6 +119,7 @@ function Carousel({
         scrollNext,
         canScrollPrev,
         canScrollNext,
+        activeIndex, // Exposed through context provider
       }}
     >
       <div

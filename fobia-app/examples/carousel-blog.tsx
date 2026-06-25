@@ -8,6 +8,8 @@ import {
 } from "../components/ui/carousel"
 import { Button } from "../components/ui/button"
 
+import { BLOGPOSTS } from "../data/blogposts"
+
 function CarouselBlog() {
   return (
     <div>
@@ -24,22 +26,42 @@ function CarouselBlog() {
             }}
             >
                 <CarouselContent className="w-full">
-                    {Array.from({ length: 6 }).map((_, index) => (
-                    <CarouselItem 
-                    key={index} 
-                    className="basis-1/3"
-                    >
-                        <div className="p-1">
-                        <Card>
-                            <CardContent className="flex aspect-square items-center justify-center p-6">
-                            <span className="text-4xl font-semibold">{index + 1}</span>
-                            </CardContent>
-                        </Card>
-                        <h1>Sample Heading</h1>
-                        <h2>Sample Text</h2>
-                        <Button>Go to Blogpost</Button>
-                        </div>
-                    </CarouselItem>
+                    {BLOGPOSTS.map((post) => (
+                        <CarouselItem key={post.id} className="basis-1/3">
+                            <div className="p-1">
+                            <Card className="overflow-hidden">
+                                <CardContent className="flex aspect-video items-center justify-center p-0 relative bg-muted">
+                                {post.mediaType === "video" ? (
+                                    <video
+                                    src={post.mediaUrl}
+                                    className="h-full w-full object-cover"
+                                    controls
+                                    preload="metadata"
+                                    playsInline
+                                    muted
+                                    />
+                                ) : (
+                                    <img
+                                    src={post.mediaUrl}
+                                    alt={post.title}
+                                    className="h-full w-full object-cover"
+                                    loading="lazy"
+                                    />
+                                )}
+                                </CardContent>
+                            </Card>
+
+                            <div className="mt-4 space-y-2">
+                                <h3 className="text-lg font-bold line-clamp-1">{post.title}</h3>
+                                <p className="text-sm text-neutral-500 line-clamp-2 min-h-[40px]">
+                                {post.description}
+                                </p>
+                                <Button className="w-full" variant="secondary">
+                                Go to Blogpost
+                                </Button>
+                            </div>
+                            </div>
+                        </CarouselItem>
                     ))}
                 </CarouselContent>
                 <CarouselPrevious />
