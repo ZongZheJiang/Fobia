@@ -1,5 +1,7 @@
+"use client"
+
+import * as React from "react"
 import { Card, CardContent } from "../components/ui/card"
-import { Button } from "@/components/ui/button"
 import {
   Carousel,
   CarouselContent,
@@ -7,79 +9,107 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../components/ui/carousel"
+import { ChevronRight } from "lucide-react"
 
-import { AUDIENCEPOSTS } from "@/data/audienceposts"
+// Use the same dataset structure
+import { AUDIENCEPOSTS } from "../data/audienceposts"
+import { type CarouselApi } from "../components/ui/carousel"
 
-function CarouselAudiences() {
+function CarouselBlog() {
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [activeIndex, setActiveIndex] = React.useState(0)
+
+  // Track the active slide index whenever the carousel shifts
+  React.useEffect(() => {
+    if (!api) return
+
+    const handleSelect = () => {
+      setActiveIndex(api.selectedScrollSnap())
+    }
+
+    handleSelect() // Get initial active index
+    api.on("select", handleSelect)
+    api.on("reInit", handleSelect)
+
+    return () => {
+      api.off("select", handleSelect)
+      api.off("reInit", handleSelect)
+    }
+  }, [api])
+
   return (
-    <div className="mx-[10%]">
-        <div className="text-left mt-20">
-            <h1 className="text-xl md:text-3xl font-bold mb-8">Use Cases: Cool Text to wow the user.</h1>
-            <h2 className="text-md md:text-xl text-right">Cool description that blows them off their feet</h2>
-        </div>
-        <div className="container mx-auto my-20 flex items-center justify-center">
-            <Carousel 
-            className="w-full max-w-6xl flex justify-center"
-            opts={{
-                align: "start",
-                loop: true,
-            }}
-            >
-                <CarouselContent className="w-full">
-                    {/* {Array.from({ length: 4 }).map((_, index) => (
-                    <CarouselItem 
-                    key={index} 
-                    className="w-full basis-[85%] md:basis-[70%]"
-                    >
-                        <div className="p-1">
-                        <Card>
-                            <CardContent className="flex aspect-video items-center justify-center p-6">
-                            <span className="text-4xl font-semibold">{index + 1}</span>
-                            </CardContent>
-                        </Card>
-                        </div>
-                    </CarouselItem>
-                    ))} */}
-                    {AUDIENCEPOSTS.map((post) => (
-                        <CarouselItem key={post.id} className="w-full basis-[85%] md:basis-[70%]">
-                            <div className="p-1">
-                            <Card className="overflow-hidden">
-                                <CardContent className="flex aspect-video items-center justify-center p-0 relative bg-muted">
-                                {post.mediaType === "video" ? (
-                                    <video
-                                    src={post.mediaUrl}
-                                    className="h-full w-full object-cover"
-                                    controls
-                                    preload="metadata"
-                                    playsInline
-                                    muted
-                                    />
-                                ) : (
-                                    <img
-                                    src={post.mediaUrl}
-                                    className="h-full w-full object-cover"
-                                    loading="lazy"
-                                    />
-                                )}
-                                </CardContent>
-                            </Card>
+    <div className="w-full overflow-hidden py-10 bg-white">
+      {/* Container is full width to allow peeking slides to stretch to the edges */}
+      <div className="w-full px-6 md:px-20">
+        <Carousel
+          setApi={setApi}
+          className="w-full mb-8"
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-6">
+            {AUDIENCEPOSTS.map((post, index) => {
+              const isActive = index === activeIndex
 
-                            <div className="mt-4 space-y-2">
-                                <Button className="w-full" variant="secondary">
-                                View Use Case
-                                </Button>
-                            </div>
-                            </div>
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-            </Carousel>
-        </div>
+              return (
+                <CarouselItem
+                  key={post.id}
+                  // basis-[75%] allows the next card to peek in on the right side
+                  className="pl-6 basis-[75%] md:basis-[70%] transition-all duration-500 ease-in-out"
+                >
+                  {/* Large Rounded Media Card */}
+                  <Card className="overflow-hidden border-none rounded-[2rem] shadow-none">
+                    <CardContent className="flex aspect-[16/9] p-0 relative bg-neutral-100">
+                      {post.mediaType === "video" ? (
+                        <video
+                          src={post.mediaUrl}
+                          className="h-full w-full object-cover"
+                          controls
+                          playsInline
+                          muted
+                        />
+                      ) : (
+                        <img
+                          src={post.mediaUrl}
+                          className="h-full w-full object-cover"
+                        />
+                      )}
+                    </CardContent>
+                  </Card>
+
+                  {/* Active-only Description Container */}
+                  <div
+                    className={`mt-8 flex justify-between items-start transition-all duration-500 ease-out ${
+                      isActive
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-4 pointer-events-none"
+                    }`}
+                  >
+                    {/* Text Details */}
+                    <div className="space-y-2 max-w-xl text-left">
+                      <h4>{post.audienceName}</h4>
+                      <h6>{post.description}</h6>
+                      <a
+                        href={`/blog/${post.id}`}
+                        className="inline-flex items-center text-sm font-semibold text-neutral-900 mt-4 hover:underline"
+                      >
+                        View case <ChevronRight className="ml-1 h-4 w-4" />
+                      </a>
+                    </div>
+                  </div>
+                </CarouselItem>
+              )
+            })}
+          </CarouselContent>
+            {/* Navigation Buttons placed inside the active layout */}
+            <CarouselPrevious />
+            <CarouselNext />
+        </Carousel>
+      </div>
     </div>
-
   )
 }
 
-export default CarouselAudiences
+export default CarouselBlog
