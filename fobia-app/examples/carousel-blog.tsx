@@ -9,7 +9,7 @@ import {
 import { Button } from "../components/ui/button"
 import Link from "next/link"
 
-import { BLOGPOSTS } from "../data/blogPosts"
+import { BLOGPOSTS } from "@/data/blogPosts"
 
 function CarouselBlog() {
   return (

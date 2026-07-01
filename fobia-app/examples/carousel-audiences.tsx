@@ -12,7 +12,7 @@ import {
 import { ChevronRight } from "lucide-react"
 
 // Use the same dataset structure
-import { AUDIENCEPOSTS } from "../data/audiencePosts"
+import { AUDIENCEPOSTS } from "@/data/audiencePosts"
 import { type CarouselApi } from "../components/ui/carousel"
 
 function CarouselBlog() {
