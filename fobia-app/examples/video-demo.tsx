@@ -35,9 +35,9 @@ export default function VideoDemo() {
                 trigger: panel,
                 start: "top center",
                 endTrigger: ".end-panel",
-                end: "top top",
+                end: "+=200",
                 scrub: true,
-                // markers: true
+                markers: true
             }
         });
 
