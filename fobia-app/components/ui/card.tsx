@@ -1,19 +1,48 @@
 import * as React from "react"
 
+import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "../../lib/utils"
+import { variantProps } from "framer-motion"
+
+const cardVariants = cva(
+  "group/card flex flex-col gap-(--card-spacing) overflow-hidden rounded-xl bg-card py-(--card-spacing) text-sm text-card-foreground [--card-spacing:--spacing(4)] has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(3)] data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",
+  {
+    variants: {
+      variant: {
+        default: "ring-1 ring-foreground/10",
+        borderless: "ring-0",
+      },
+    },
+  }
+)
+
+const cardFooterVariants = cva(
+  "flex items-center rounded-b-xl bg-muted/50 p-(--card-spacing)",
+  {
+    variants: {
+      variant: {
+        default: "bg-muted/50 border-t",
+        borderless: "bg-white"
+      }
+    }
+  }
+)
 
 function Card({
   className,
+  variant = "default",
   size = "default",
   ...props
-}: React.ComponentProps<"div"> & { size?: "default" | "sm" }) {
+}: React.ComponentProps<"div"> & 
+{ size?: "default" | "sm" } & 
+  VariantProps<typeof cardVariants>) {
   return (
     <div
       data-slot="card"
+      data-variant={variant}
       data-size={size}
       className={cn(
-        "group/card flex flex-col gap-(--card-spacing) overflow-hidden rounded-xl bg-card py-(--card-spacing) text-sm text-card-foreground ring-1 ring-foreground/10 [--card-spacing:--spacing(4)] has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(3)] data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",
-        className
+        cardVariants({ variant, className })
       )}
       {...props}
     />
@@ -79,14 +108,14 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
+function CardFooter({ className, variant="default", ...props }: React.ComponentProps<"div"> &
+  VariantProps<typeof cardFooterVariants>
+) {
   return (
     <div
       data-slot="card-footer"
-      className={cn(
-        "flex items-center rounded-b-xl border-t bg-muted/50 p-(--card-spacing)",
-        className
-      )}
+      data-variant={variant}
+      className={cn(cardFooterVariants({variant, className}))}
       {...props}
     />
   )

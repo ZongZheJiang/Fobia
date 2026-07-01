@@ -3,7 +3,7 @@ import "./index.css"
 import { gsap } from "gsap";
 
 // Import from components 
-import { Footer2 } from "../components/footer2"
+import { Footer2 } from "../components/footer"
 
 // Import from examples
 import { NavigationMenuDemo } from "../examples/navigation-menu"
@@ -17,7 +17,7 @@ import VideoDemo from "@/examples/video-demo"
 export function Home () {
   return (
     <div>
-      <NavigationMenuDemo />
+      <NavigationMenuDemo variant="dark" overlay={true} />
       <Hero />
       <div id="smooth-wrapper">
         <div id="smooth-content">

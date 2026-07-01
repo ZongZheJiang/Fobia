@@ -1,4 +1,4 @@
-import { AudiencePost } from "@/types/audiencepost";
+import { AudiencePost } from "../types/audiencePost";
 
 export const AUDIENCEPOSTS: AudiencePost[] = [
     {

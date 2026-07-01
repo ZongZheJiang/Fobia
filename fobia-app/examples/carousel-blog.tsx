@@ -7,8 +7,9 @@ import {
   CarouselPrevious,
 } from "../components/ui/carousel"
 import { Button } from "../components/ui/button"
+import Link from "next/link"
 
-import { BLOGPOSTS } from "../data/blogposts"
+import { BLOGPOSTS } from "../data/blogPosts"
 
 function CarouselBlog() {
   return (
@@ -54,10 +55,10 @@ function CarouselBlog() {
                             <div className="mt-4 space-y-2">
                                 <h3 className="text-lg font-bold line-clamp-1">{post.title}</h3>
                                 <p className="text-sm text-neutral-500 line-clamp-2 min-h-[40px]">
-                                {post.description}
+                                {post.blogType}
                                 </p>
                                 <Button className="w-full" variant="secondary">
-                                Go to Blogpost
+                                    <Link href={post.href}>Go to Blogpost</Link>
                                 </Button>
                             </div>
                             </div>

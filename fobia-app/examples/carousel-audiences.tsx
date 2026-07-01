@@ -12,7 +12,7 @@ import {
 import { ChevronRight } from "lucide-react"
 
 // Use the same dataset structure
-import { AUDIENCEPOSTS } from "../data/audienceposts"
+import { AUDIENCEPOSTS } from "../data/audiencePosts"
 import { type CarouselApi } from "../components/ui/carousel"
 
 function CarouselBlog() {
@@ -60,7 +60,7 @@ function CarouselBlog() {
                   className="pl-6 basis-[75%] md:basis-[70%] transition-all duration-500 ease-in-out"
                 >
                   {/* Large Rounded Media Card */}
-                  <Card className="overflow-hidden border-none rounded-[2rem] shadow-none">
+                  <Card className="relative aspect-[16/9] pt-0">
                     <CardContent className="flex aspect-[16/9] p-0 relative bg-neutral-100">
                       {post.mediaType === "video" ? (
                         <video
