@@ -11,6 +11,7 @@ const cardVariants = cva(
       variant: {
         default: "ring-1 ring-foreground/10",
         borderless: "ring-0",
+        backdropBlur: "ring-1 ring-foreground/10 backdrop-blur-md shadow-xl"
       },
     },
   }

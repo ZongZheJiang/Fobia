@@ -2,15 +2,15 @@ import "../globals.css"
 import { Button } from "../../components/ui/button"
 import { NavigationMenuDemo } from "../../examples/navigation-menu"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "../../components/ui/card"
-import { Footer2 } from "../../components/footer2"
+import { Footer } from "../../components/footer"
 import Link from "next/link"
+
+import DownloadCards from "../../examples/download-cards"
 
 export function Download() {
   return (
-    <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-200 selection:text-zinc-900 font-montserrat">
-      <NavigationMenuDemo />
-
-      <main className="container mx-auto px-4 py-24 md:py-32 max-w-6xl">
+      <main>
+        <NavigationMenuDemo />
         <div className="flex flex-col items-center text-center space-y-6 mb-16 mt-8">
           <div className="inline-flex items-center rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-sm font-medium text-zinc-600 backdrop-blur-sm">
             <span className="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
@@ -23,65 +23,8 @@ export function Download() {
             Experience the next generation of our platform. Available on all platforms.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
-          {/* macOS Card */}
-          <Card className="bg-white/80 backdrop-blur-md border-zinc-200 shadow-xl hover:border-zinc-300 transition-all duration-300 group">
-            <CardHeader>
-              <img src="../applelogo.svg" alt="macOS logo" className="w-4 h-4 object-contain" />
-              <CardTitle className="text-2xl flex items-center gap-2 text-zinc-800 group-hover:text-black transition-colors">
-                macOS
-              </CardTitle>
-              <CardDescription className="text-zinc-500">Requires macOS 11.0 or later.</CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-col gap-3">
-              <Button className="w-full bg-black text-white hover:bg-zinc-800 transition-colors">
-                Download for Apple Silicon
-              </Button>
-              <Button variant="outline" className="w-full border-zinc-200 bg-transparent hover:bg-zinc-100 text-zinc-700 transition-colors">
-                Download for Intel
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Windows Card */}
-          <Card className="bg-white/80 backdrop-blur-md border-zinc-200 shadow-xl hover:border-zinc-300 transition-all duration-300 group">
-            <CardHeader>
-              <img src="fobia-app/app/download/windowslogo.png" alt="windows logo" className="w-4 h-4 object-contain" />
-              <CardTitle className="text-2xl flex items-center gap-2 text-zinc-800 group-hover:text-black transition-colors">
-                Windows
-              </CardTitle>
-              <CardDescription className="text-zinc-500">Windows 10 and 11 supported.</CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-col gap-3">
-              <Button className="w-full bg-black text-white hover:bg-zinc-800 transition-colors">
-                Download for x64
-              </Button>
-              <Button variant="outline" className="w-full border-zinc-200 bg-transparent hover:bg-zinc-100 text-zinc-700 transition-colors">
-                Download for ARM64
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Linux Card */}
-          <Card className="bg-white/80 backdrop-blur-md border-zinc-200 shadow-xl hover:border-zinc-300 transition-all duration-300 group">
-            <CardHeader>
-              <img src="fobia-app/app/download/linuxlogo.png" alt="linux logo" className="w-4 h-4 object-contain" />
-              <CardTitle className="text-2xl flex items-center gap-2 text-zinc-800 group-hover:text-black transition-colors">
-                Linux
-              </CardTitle>
-              <CardDescription className="text-zinc-500">Available via AppImage or DEB.</CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-col gap-3">
-              <Button className="w-full bg-black text-white hover:bg-zinc-800 transition-colors">
-                Download AppImage
-              </Button>
-              <Button variant="outline" className="w-full border-zinc-200 bg-transparent hover:bg-zinc-100 text-zinc-700 transition-colors">
-                Download .deb
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
+        
+        <DownloadCards />
 
         {/* CLI Section */}
         <div className="max-w-3xl mx-auto mb-32">
@@ -105,11 +48,8 @@ export function Download() {
             </div>
           </div>
         </div>
-
+        <Footer />
       </main>
-
-      <Footer2 />
-    </div>
   )
 }
 

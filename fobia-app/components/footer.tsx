@@ -24,12 +24,12 @@ interface FooterBasicProps {
   className?: string;
 }
 
-interface Footer2Props extends FooterBasicProps {
+interface FooterProps extends FooterBasicProps {
   logoClassName?: string;
 }
-type Props = Partial<Footer2Props>;
+type Props = Partial<FooterProps>;
 
-const defaultProps: Footer2Props = {
+const defaultProps: FooterProps = {
   logo: {
     url: "",
     src: "/fobia-logo.jpeg",
@@ -86,7 +86,7 @@ const defaultProps: Footer2Props = {
 
 const MAX_SECTIONS = 4;
 
-const Footer2 = (props: Props) => {
+const Footer = (props: Props) => {
   const { logo, description, sections, copyright, legalLinks, className } = {
     ...defaultProps,
     ...props,
@@ -148,4 +148,4 @@ const Footer2 = (props: Props) => {
   );
 };
 
-export { Footer2 };
+export { Footer };
