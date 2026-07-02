@@ -4,4 +4,5 @@ export interface AudiencePost {
   mediaUrl: string
   audienceName: string
   description: string
+  useCaseUrl: string
 }

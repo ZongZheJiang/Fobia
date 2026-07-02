@@ -1,4 +1,3 @@
-import "../globals.css"
 import { Button } from "../../components/ui/button"
 import { NavigationMenuDemo } from "../../examples/navigation-menu"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "../../components/ui/card"

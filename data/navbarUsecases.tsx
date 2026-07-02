@@ -2,18 +2,18 @@ import { NavbarItem } from "@/types/navbarItem"
 
 export const NAVBAR_USECASES: NavbarItem[] = [
     {
-        title: "Item 1",
+        title: "Enterprise Professionals",
         href: "/",
-        description: "Description for Item 1",
+        description: "Fobia makes cutting-edge AI applications accessible to enterprise professionals.",
     },
     {
-        title: "Item 2",
+        title: "AI Enthusiasts",
         href: "/",
-        description: "Description for Item 2",
+        description: "Fobia provides a platform for AI enthusiasts to explore and experiment with the latest AI technologies.",
     },
     {
-        title: "Item 3",
+        title: "Application Developers",
         href: "/",
-        description: "Description for Item 3",
+        description: "Fobia offers tools and resources for application developers to integrate AI into their projects.",
     }
 ]

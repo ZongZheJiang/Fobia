@@ -92,7 +92,7 @@ function CarouselBlog() {
                       <h4>{post.audienceName}</h4>
                       <h6>{post.description}</h6>
                       <a
-                        href={`/blog/${post.id}`}
+                        href={`${post.useCaseUrl}`}
                         className="inline-flex items-center text-sm font-semibold text-neutral-900 mt-4 hover:underline"
                       >
                         View case <ChevronRight className="ml-1 h-4 w-4" />

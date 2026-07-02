@@ -50,7 +50,6 @@ export const NavigationMenuDemo = ({ variant = "light", overlay = false }: Navig
                     href={component.href}
                     variant={variant}
                   >
-                    {component.description}
                   </ListItem>
                 ))}
               </ul>

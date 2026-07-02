@@ -2,7 +2,7 @@ import { NavigationMenuDemo } from "@/examples/navigation-menu"
 import { Button } from "@/components/ui/button"
 import { Footer } from "@/components/footer"
 
-function Blog_1_Introducing_Fobia() {
+function Use_Case_1_Enterprise_Professional() {
     return (
         <main>
             <NavigationMenuDemo />
@@ -27,4 +27,4 @@ function Blog_1_Introducing_Fobia() {
     )
 }
 
-export default Blog_1_Introducing_Fobia
+export default Use_Case_1_Enterprise_Professional

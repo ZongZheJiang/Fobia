@@ -1,5 +1,3 @@
-import "./index.css"
-
 import { gsap } from "gsap";
 
 // Import from components 
