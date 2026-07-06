@@ -35,7 +35,8 @@ gcloud run deploy "$SERVICE_NAME" \
   --memory 1Gi \
   --timeout 300s \
   --labels environment=production \
-  --set-env-vars NODE_ENV=production
+  --set-env-vars NODE_ENV=production \
+  --set-env-vars GATEWAY_SECRET="${GATEWAY_SECRET:-}" \
 
 echo ""
 echo "Deployment complete!"
