@@ -1,41 +1,59 @@
 "use client"
 
-import { BackgroundBeams } from "../components/ui/background-beam"
+import { useTheme } from "../components/theme-provider"
 import PixelBlast from "@/components/pixelblast"
 import TextGenerateEffect from "../components/text-generation"
 import { Button } from "../components/ui/button"
 import Link from "next/dist/client/link"
+import FobiaLogo from "../components/fobia"
 
 function Hero() {
+  const { theme } = useTheme()
+  const pixelColor = theme === "dark" ? "#ffffff" : "#000000"
+
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-neutral-950">
+    <section className="relative min-h-screen w-full overflow-hidden bg-background">
       <div className="absolute inset-0">
         <PixelBlast
           variant="square"
-          color="#701bbf"
-          className="h-120 w-[80%]"
+          color={pixelColor}
+          className="h-full w-full"
+          transparent
+          enableRipples
+          rippleSpeed={0.3}
+          rippleThickness={0.1}
+          rippleIntensityScale={1}
+          speed={0.5}
+          edgeFade={0.5}
         />
       </div>
-      <div className="relative z-10 text-center">
-        <div>
-          <TextGenerateEffect 
-          className="text-4xl/16 md:text-6xl/20 text-center mx-[10%] text-white"
-          words="Turbocharge your computing capabilities now" 
+
+      <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center px-6 pt-16">
+        <FobiaLogo
+          size={140}
+          iconSize={84}
+          color="var(--foreground)"
+          animate={true}
+        />
+
+        <TextGenerateEffect
+          className="mt-8 text-3xl/14 md:text-5xl/18 text-center text-foreground max-w-2xl"
+          words="Turbocharge your computing capabilities now"
           filter={true}
           duration={0.5}
           staggerDelay={0.2}
-          />
-        </div>
-        <div className="container mx-auto px-4 flex items-center justify-center gap-6 mt-10 relative z-10">
-          <Button variant={"modern"} className="bg-zinc-950 text-white hover:bg-zinc-800">
+        />
+
+        <div className="mt-10 flex items-center gap-4">
+          <Button variant="modern" className="bg-foreground/10 text-foreground hover:bg-foreground/20 border border-border">
             <Link href="/documentation">Documentation</Link>
           </Button>
-          <Button variant={"modern"} className="bg-zinc-950 text-white hover:bg-zinc-800">
+          <Button variant="modern" className="bg-purple-600 text-white hover:bg-purple-500 shadow-lg shadow-purple-600/25">
             <Link href="/download">Get Started</Link>
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

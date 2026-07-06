@@ -1,6 +1,5 @@
-"use client"
-
 import { CSSProperties, useId } from "react";
+
 
 type GradientStop = {
     offset: string;
@@ -30,19 +29,46 @@ type RadialGradientConfig = {
 type GradientConfig = LinearGradientConfig | RadialGradientConfig;
 
 type AnimatedGpuFanIconProps = {
+    /** Width of the SVG. Accepts number px or any CSS size string. */
     width?: number | string;
+
+    /** Height of the SVG. Accepts number px or any CSS size string. */
     height?: number | string;
+
+    /** Shortcut for square-ish responsive sizing. Overridden by width/height when provided. */
     size?: number | string;
+
+    /** Solid fill color used when gradient is not provided. */
     color?: string;
+
+    /** Optional gradient fill for the entire SVG. */
     gradient?: GradientConfig;
+
+    /** Enables/disables the original SVG fan rotation animation. */
     animate?: boolean;
+
+    /** Fan rotation duration in seconds. Original SVG speed is 1.4 seconds. */
     speed?: number;
+
+    /** Controls how the cropped SVG fills its box. */
     preserveAspectRatio?: string;
+
+    /** Optional className for styling from parent components. */
     className?: string;
+
+    /** Optional inline style. */
     style?: CSSProperties;
+
+    /** Accessible title. */
     title?: string;
+
+    /** Accessible description. */
     desc?: string;
+
+    /** Optional click handler. */
     onClick?: () => void;
+
+    /** External blade rotation angle in degrees. Overrides CSS animation when set. */
     bladeRotation?: number;
 };
 
@@ -163,6 +189,7 @@ export default function AnimatedGpuFanIcon({
                             : undefined
                     }
                 >
+
                     <path d="M 249.341 185.245 C 256.388 186.42 262.469 190.593 265.827 196.557 C 297.121 201.725 323.849 188.377 338.612 160.026 C 323.338 132.914 295.688 113.952 263.651 108.62 C 283.308 139.396 263.123 160.644 249.341 185.245 Z" />
                     <path d="M 268.59 205.04 C 269.531 211.745 267.333 218.509 262.63 223.38 C 266.85 253.14 287.39 273.06 318.73 277.57 C 340.118 255.427 350.114 224.666 345.83 194.18 C 322.24 221.4 296.07 209.82 268.59 205.04 Z" />
                     <path d="M 255.44 228.87 C 249.356 231.836 242.244 231.836 236.16 228.87 C 209.16 242.09 196.56 267.78 201.96 298.98 C 229.629 312.476 261.971 312.476 289.64 298.98 C 256.46 284.95 259.39 256.49 255.44 228.87 Z" />
@@ -175,3 +202,47 @@ export default function AnimatedGpuFanIcon({
         </svg>
     );
 }
+
+export function AnimatedGpuFanIconExamples() {
+    return (
+        <div className="grid gap-8 p-6">
+            <AnimatedGpuFanIcon size={180} color="#111827" />
+
+            <AnimatedGpuFanIcon
+                width={320}
+                color="#2563eb"
+                speed={0.8}
+            />
+
+            <AnimatedGpuFanIcon
+                width={360}
+                speed={2.2}
+                gradient={{
+                    type: "linear",
+                    x1: "0%",
+                    y1: "0%",
+                    x2: "100%",
+                    y2: "0%",
+                    stops: [
+                        { offset: "0%", color: "#22c55e" },
+                        { offset: "50%", color: "#06b6d4" },
+                        { offset: "100%", color: "#6366f1" },
+                    ],
+                }}
+            />
+
+            <AnimatedGpuFanIcon
+                width={360}
+                animate={false}
+                gradient={{
+                    type: "radial",
+                    stops: [
+                        { offset: "0%", color: "#f97316" },
+                        { offset: "100%", color: "#7c3aed" },
+                    ],
+                }}
+            />
+        </div>
+    );
+}
+

@@ -1,4 +1,7 @@
+"use client"
+
 import { cn } from "../lib/utils";
+import FobiaLogo from "./fobia";
 
 interface FooterLink {
   name: string;
@@ -8,15 +11,8 @@ interface FooterSection {
   title: string;
   links: FooterLink[];
 }
-interface FooterLogo {
-  url: string;
-  src: string;
-  alt: string;
-  title: string;
-}
 
 interface FooterBasicProps {
-  logo?: FooterLogo;
   description?: string;
   sections?: FooterSection[];
   copyright?: string;
@@ -25,17 +21,10 @@ interface FooterBasicProps {
 }
 
 interface FooterProps extends FooterBasicProps {
-  logoClassName?: string;
 }
 type Props = Partial<FooterProps>;
 
 const defaultProps: FooterProps = {
-  logo: {
-    url: "",
-    src: "/fobia-logo.jpeg",
-    alt: "logo",
-    title: "Fobia",
-  },
   description: "From developers, for the world.",
   sections: [
     {
@@ -87,7 +76,7 @@ const defaultProps: FooterProps = {
 const MAX_SECTIONS = 4;
 
 const Footer = (props: Props) => {
-  const { logo, description, sections, copyright, legalLinks, className } = {
+  const { description, sections, copyright, legalLinks, className } = {
     ...defaultProps,
     ...props,
   };
@@ -101,14 +90,7 @@ const Footer = (props: Props) => {
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
             <div className="col-span-2 mb-8 lg:mb-0">
               <div className="flex items-center lg:justify-start">
-                <a href={logo?.url}>
-                  <img
-                    src={logo?.src}
-                    alt={logo?.alt}
-                    title={logo?.title}
-                    className="h-20 dark:invert"
-                  />
-                </a>
+                  <FobiaLogo size={72} iconSize={44} color="var(--foreground)" animate={false} />
               </div>
               <p className="mt-4 text-sm font-medium text-muted-foreground">
                 {description}
