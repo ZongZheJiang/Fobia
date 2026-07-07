@@ -12,7 +12,7 @@ import VideoDemo from "@/examples/video-demo"
 
 export function Home () {
   return (
-    <main className="w-full">
+    <main className="w-full items-center gap-8">
       <NavigationMenuDemo />
       <Hero />
       <div id="smooth-wrapper">
