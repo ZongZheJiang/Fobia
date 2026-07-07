@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer"
 
 function Blog_1_Introducing_Fobia() {
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen">
             <NavigationMenuDemo />
 
             {/* Article Container */}
@@ -28,7 +28,7 @@ function Blog_1_Introducing_Fobia() {
                         <span>•</span>
                         <span>10 min read</span>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-900 mb-6 leading-tight">
+                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
                         Introducing Fobia
                     </h1>
                     <div className="flex items-center gap-3 border-t border-b border-zinc-100 py-4">
@@ -36,14 +36,14 @@ function Blog_1_Introducing_Fobia() {
                             
                         </div>
                         <div>
-                            <p className="text-sm font-semibold text-zinc-950">Fobia</p>
-                            <p className="text-xs text-zinc-500"></p>
+                            <p className="text-sm font-semibold">Fobia</p>
+                            <p className="text-xs"></p>
                         </div>
                     </div>
                 </header>
 
                 {/* Main Content */}
-                <div className="space-y-8 text-zinc-700 leading-relaxed text-lg">
+                <div className="space-y-8 leading-relaxed text-lg">
                     <p>
                         Open source is public, but it is not always accessible.
                     </p>
@@ -60,21 +60,21 @@ function Blog_1_Introducing_Fobia() {
                         Open source should not stop at developers.
                     </p>
 
-                    <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 pt-4">
+                    <h2 className="text-2xl md:text-3xl font-bold pt-4">
                         Our Mission
                     </h2>
                     <p>
                         Fobia’s mission is to make open-source and AI-powered software accessible, usable, and deployable by anyone, regardless of technical background.
                     </p>
                     {/* <br /> */}
-                    <blockquote className="border-l-4 border-zinc-900 pl-4 italic text-zinc-800 my-6">
+                    <blockquote className="border-l-4 border-zinc-900 pl-4 italic my-6">
                         "Developer experience isn't just about fast compilation; it's about reducing the cognitive load required to deliver value."
                     </blockquote>
                     <p>
                         We bridge the gap between public code and practical use by turning open-source projects into simple, discoverable, app-like experiences.
                     </p>
 
-                    <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 pt-4">
+                    <h2 className="text-2xl md:text-3xl font-bold pt-4">
                         Our Vision
                     </h2>
                     <p>
@@ -106,12 +106,14 @@ function Blog_1_Introducing_Fobia() {
                         <span className="bg-zinc-100 text-zinc-600 text-xs font-medium px-2.5 py-0.5 rounded-full">NextJS</span>
                         <span className="bg-zinc-100 text-zinc-600 text-xs font-medium px-2.5 py-0.5 rounded-full">WebDev</span>
                     </div>
-                    <Button variant="outline" className="sm:self-auto self-start">
-                        <a href="/blog">Back to Blog</a>
-                    </Button>
-                    <Button variant="outline" className="sm:self-auto self-start">
-                        <a href="https://www.linkedin.com/pulse/bringing-open-source-ai-everyone-fobia-ai-g7gfe/">Link to full article</a>
-                    </Button>
+                    <div className="flex gap-2">
+                        <Button variant="outline" className="sm:self-auto self-start">
+                            <a href="/blog">Back to Blog</a>
+                        </Button>
+                        <Button variant="outline" className="sm:self-auto self-start">
+                            <a href="https://www.linkedin.com/pulse/bringing-open-source-ai-everyone-fobia-ai-g7gfe/">Link to full article</a>
+                        </Button>
+                    </div>
                 </footer>
 
             </article>
