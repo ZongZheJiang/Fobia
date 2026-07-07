@@ -103,12 +103,12 @@ export const NavigationMenuDemo = () => {
 }
 
 const listItemVariants = cva(
-  "leading-none font-medium",
+  "leading-none font-medium text-foreground/90",
   {
     variants: {
       variant: {
         light: "",
-        dark: "text-white",
+        dark: "",
       },
     },
   }
