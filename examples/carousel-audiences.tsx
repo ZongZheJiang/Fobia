@@ -38,7 +38,7 @@ function CarouselBlog() {
   }, [api])
 
   return (
-    <div className="w-full overflow-hidden py-10 bg-white">
+    <div className="w-full overflow-hidden py-10">
       {/* Container is full width to allow peeking slides to stretch to the edges */}
       <div className="w-full px-6 md:px-20">
         <Carousel
