@@ -26,7 +26,7 @@ function HorizontalCard() {
                         </CardDescription>
                     </CardHeader>
                     <CardFooter variant="borderless">
-                        <Button>
+                        <Button className="w-full sm:w-auto px-6">
                             <Link href="/blog/1_introducing_fobia">
                                 View Blog Post
                             </Link>

@@ -7,7 +7,7 @@ function Blog() {
     return (
         <div>
             <NavigationMenuDemo />
-            <h2 className="text-4xl/16 md:text-6xl/20 ml-[10%] my-8">Featured</h2>
+            <h2 className="text-4xl/16 md:text-6xl/20 ml-[10%] my-16">Featured</h2>
             <HorizontalCard />
             <HorizontalCardGrid />
             <Footer />

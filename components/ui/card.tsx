@@ -23,7 +23,7 @@ const cardFooterVariants = cva(
     variants: {
       variant: {
         default: "bg-muted/50 border-t",
-        borderless: "bg-white"
+        borderless: "bg-foreground/0",
       }
     }
   }

@@ -28,7 +28,7 @@ function HorizontalCardGrid() {
             {/* Left side text container */}
             <div className="flex-1 min-w-0">
               <Card variant="borderless">
-                <CardHeader className="p-0">
+                <CardHeader>
                   <CardAction>
                     {/* <Badge variant="secondary">{item.tag}</Badge> */}
                   </CardAction>
@@ -38,7 +38,7 @@ function HorizontalCardGrid() {
                   </CardDescription>
                 </CardHeader>
                 {/* Overriding the default CardFooter background and borders downstream */}
-                <CardFooter className="border-none bg-transparent p-0 mt-4">
+                <CardFooter variant="borderless">
                   <Button className="w-full sm:w-auto px-6">
                     <Link href={item.href}>
                       View Blog Post
