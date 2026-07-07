@@ -6,6 +6,7 @@ import TextGenerateEffect from "../components/text-generation"
 import { Button } from "../components/ui/button"
 import Link from "next/dist/client/link"
 import FobiaLogo from "../components/fobia"
+import IconCarousel from "../examples/icon-carousel"
 
 function Hero() {
   const { theme } = useTheme()
@@ -28,7 +29,7 @@ function Hero() {
         />
       </div>
 
-      <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center px-6 pt-16">
+      <div className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center px-6 pt-16 gap-6">
         <FobiaLogo
           size={140}
           iconSize={84}
@@ -45,13 +46,15 @@ function Hero() {
         />
 
         <div className="mt-10 flex items-center gap-4">
-          <Button variant="modern" className="bg-foreground/10 text-foreground hover:bg-foreground/20 border border-border">
+          <Button variant="modern" className="bg-background/100 text-foreground hover:bg-background/100 border border-border">
             <Link href="/documentation">Documentation</Link>
           </Button>
-          <Button variant="modern" className="bg-purple-600 text-white hover:bg-purple-500 shadow-lg shadow-purple-600/25">
+          <Button variant="modern" className="bg-purple-600 text-white hover:bg-purple-500 shadow-purple-600/25">
             <Link href="/download">Get Started</Link>
           </Button>
         </div>
+
+        <IconCarousel />
       </div>
     </section>
   )

@@ -30,7 +30,7 @@ function IconStrip() {
 
 export default function IconCarousel() {
   return (
-    <div className="relative w-full overflow-hidden bg-background/50 py-8 border-y border-border">
+    <div className="relative w-full overflow-hidden bg-background/90 py-8 border-y border-border">
       <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
 

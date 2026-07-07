@@ -2,7 +2,6 @@ import * as React from "react"
 
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "../../lib/utils"
-import { variantProps } from "framer-motion"
 
 const cardVariants = cva(
   "group/card flex flex-col gap-(--card-spacing) overflow-hidden rounded-xl bg-card py-(--card-spacing) text-sm text-card-foreground [--card-spacing:--spacing(4)] has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(3)] data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl",
@@ -10,7 +9,7 @@ const cardVariants = cva(
     variants: {
       variant: {
         default: "ring-1 ring-foreground/10",
-        borderless: "ring-0",
+        borderless: "ring-0 bg-foreground/5",
         backdropBlur: "ring-1 ring-foreground/10 backdrop-blur-md shadow-xl"
       },
     },
@@ -18,12 +17,12 @@ const cardVariants = cva(
 )
 
 const cardFooterVariants = cva(
-  "flex items-center rounded-b-xl bg-muted/50 p-(--card-spacing)",
+  "flex items-center rounded-b-xl p-(--card-spacing)",
   {
     variants: {
       variant: {
         default: "bg-muted/50 border-t",
-        borderless: "bg-foreground/0",
+        borderless: "",
       }
     }
   }
