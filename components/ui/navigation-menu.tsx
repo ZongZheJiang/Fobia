@@ -31,8 +31,8 @@ const navigationMenuViewportVariants = cva(
   {
     variants: {
       variant: {
-        light: "bg-foreground/10",
-        dark: "bg-foreground/10",
+        light: "bg-background/70",
+        dark: "bg-background/70",
       },
     },
   }
