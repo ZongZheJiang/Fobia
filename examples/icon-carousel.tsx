@@ -1,5 +1,3 @@
-"use client"
-
 import { Box, Cpu, Database, HardDrive, Layers, Network, Terminal, Cloud, GitBranch, Container } from "lucide-react"
 
 const PLACEMENT_ICONS = [

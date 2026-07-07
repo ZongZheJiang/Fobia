@@ -2,6 +2,7 @@
 
 import { cn } from "../lib/utils";
 import FobiaLogo from "./fobia";
+import Image from "next/image";
 
 interface FooterLink {
   name: string;
@@ -10,6 +11,12 @@ interface FooterLink {
 interface FooterSection {
   title: string;
   links: FooterLink[];
+}
+
+interface SocialLinks {
+  name: string;
+  url: string;
+  icon: string;
 }
 
 interface FooterBasicProps {
@@ -82,7 +89,7 @@ const defaultProps: FooterProps = {
 const MAX_SECTIONS = 4;
 
 const Footer = (props: Props) => {
-  const { description, sections, copyright, legalLinks, className } = {
+  const { description, sections, copyright, legalLinks, socialLinks, className } = {
     ...defaultProps,
     ...props,
   };
