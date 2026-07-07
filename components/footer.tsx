@@ -14,6 +14,7 @@ interface FooterSection {
 
 interface FooterBasicProps {
   description?: string;
+  socialLinks?: SocialLinks[];
   sections?: FooterSection[];
   copyright?: string;
   legalLinks?: FooterLink[];
@@ -26,6 +27,11 @@ type Props = Partial<FooterProps>;
 
 const defaultProps: FooterProps = {
   description: "From developers, for the world.",
+  socialLinks: [
+    { name: "Twitter", url: "/", icon: "/x-twitter.svg" },
+    { name: "LinkedIn", url: "https://www.linkedin.com/company/fobia-ai/", icon: "/linkedin.svg" },
+    { name: "YouTube", url: "/", icon: "/youtube.svg" },
+  ],
   sections: [
     {
       title: "Product",
@@ -95,6 +101,22 @@ const Footer = (props: Props) => {
               <p className="mt-4 text-sm font-medium text-muted-foreground">
                 {description}
               </p>
+              <div className="container flex flex-row items-center justify-start gap-4 pt-6">
+                {socialLinks?.map((link, linkIdx) => (
+                  <a
+                    key={linkIdx}
+                    href={link.url}
+                    className="text-muted-foreground hover:text-primary"
+                  >
+                    <Image
+                      src={link.icon}
+                      alt={link.name}
+                      width={24}
+                      height={24}
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
             {visibleSections.map((section, sectionIdx) => (
               <div key={sectionIdx}>

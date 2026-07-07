@@ -10,6 +10,7 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Button } from "../components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 
 function HorizontalCard() {
     return (
@@ -20,14 +21,16 @@ function HorizontalCard() {
                         <CardAction>
                         <Badge variant="secondary">Featured</Badge>
                         </CardAction>
-                        <CardTitle>Design systems meetup</CardTitle>
+                        <CardTitle>Introducing Fobia</CardTitle>
                         <CardDescription>
-                        A practical talk on component APIs, accessibility, and shipping
-                        faster.
                         </CardDescription>
                     </CardHeader>
                     <CardFooter variant="borderless">
-                        <Button className="w-[20%]">View Event</Button>
+                        <Button>
+                            <Link href="/blog/1_introducing_fobia">
+                                View Blog Post
+                            </Link>
+                        </Button>
                     </CardFooter>
                 </Card>
             </div>

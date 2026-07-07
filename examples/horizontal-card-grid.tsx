@@ -10,15 +10,17 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Button } from "../components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 
 import { CARD_ITEMS } from "@/data/cardDatas"
+import { BLOGPOSTS } from "@/data/blogPosts"
 
 function HorizontalCardGrid() {
   return (
     <div className="w-full max-w-7xl mx-auto px-6 py-12">
       {/* Grid container: 1 column on mobile, 2 columns on large screens */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {CARD_ITEMS.map((item) => (
+        {BLOGPOSTS.map((item) => (
           <div 
             key={item.id} 
             className="flex flex-col sm:flex-row justify-between items-start gap-6 pb-8 border-b border-neutral-100 last:border-b-0 lg:border-b-0"
@@ -28,17 +30,19 @@ function HorizontalCardGrid() {
               <Card variant="borderless">
                 <CardHeader className="p-0">
                   <CardAction>
-                    <Badge variant="secondary">{item.tag}</Badge>
+                    {/* <Badge variant="secondary">{item.tag}</Badge> */}
                   </CardAction>
                   <CardTitle>{item.title}</CardTitle>
                   <CardDescription className="line-clamp-3">
-                    {item.description}
+                    {item.blogType}
                   </CardDescription>
                 </CardHeader>
                 {/* Overriding the default CardFooter background and borders downstream */}
                 <CardFooter className="border-none bg-transparent p-0 mt-4">
                   <Button className="w-full sm:w-auto px-6">
-                    {item.buttonText}
+                    <Link href={item.href}>
+                      View Blog Post
+                    </Link>
                   </Button>
                 </CardFooter>
               </Card>
@@ -47,9 +51,9 @@ function HorizontalCardGrid() {
             {/* Right side image container (Responsive sizing) */}
             <div className="relative w-full sm:w-[240px] aspect-[16/10] sm:aspect-square shrink-0 rounded-xl overflow-hidden">
               <Image
-                src={item.imageUrl}
+                src={item.mediaUrl}
                 fill
-                alt={item.imageAlt}
+                alt=""
                 className="object-cover rounded-xl"
                 sizes="(max-width: 640px) 100vw, 240px"
               />
