@@ -1,5 +1,4 @@
-// import { NavigationMenuDemo } from "../../examples/navigation-menu"
-import { NavigationMenuDemo } from "../../examples/navigation-menu-beta"
+import { NavigationMenuDemo } from "../../examples/navigation-menu"
 import { Footer } from "../../components/footer"
 
 import DownloadCards from "../../examples/download-cards"
@@ -22,7 +21,7 @@ export function Download() {
         </div>
         
         <DownloadCards />
-        {/* <Footer /> */}
+        <Footer />
       </main>
   )
 }

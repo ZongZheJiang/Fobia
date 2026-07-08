@@ -2,7 +2,7 @@
 import { Footer } from "../components/footer"
 
 // Import from examples
-import { NavigationMenuDemo } from "../examples/navigation-menu-beta"
+import { NavigationMenuDemo } from "../examples/navigation-menu"
 import Hero from "../examples/hero"
 import ProductSummary from "@/examples/product-summary"
 import CarouselAudiences from "../examples/carousel-audiences"
@@ -15,6 +15,18 @@ export function Home () {
     <main className="w-full items-center gap-8">
       <NavigationMenuDemo />
       <Hero />
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <header className="h-[40vh]"></header>
+          <VideoDemo />
+          <footer className="h-[80vh]"></footer>
+        </div>
+      </div>
+      <ProductSummary />
+      <CarouselAudiences />
+      <HeroDownload />
+      <CarouselBlog />
+      <Footer />
     </main>
   )
 }
