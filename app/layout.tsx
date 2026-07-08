@@ -1,7 +1,5 @@
-// app/layout.tsx
-
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Montserrat, Noto_Sans_Hebrew } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/theme-provider";
 
@@ -26,9 +24,16 @@ const montserrat = Montserrat({
   weight: ["400", "700"],
 });
 
+const notoSansHebrew = Noto_Sans_Hebrew({
+  variable: "--font-noto-sans-hebrew",
+  subsets: ["hebrew", "latin"],
+  weight: ["400", "500", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Fobia - From developers, for the world.",
   description: "Main Page",
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({
@@ -39,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${montserrat.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${montserrat.variable} ${notoSansHebrew.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <ThemeProvider>{children}</ThemeProvider>

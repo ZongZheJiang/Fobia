@@ -13,9 +13,9 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined)
 
 function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "dark"
+  if (typeof window === "undefined") return "light"
   const stored = localStorage.getItem("fobia-web-theme") as Theme | null
-  return stored ?? "dark"
+  return stored ?? "light"
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
