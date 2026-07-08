@@ -26,7 +26,7 @@ function HorizontalCardGrid() {
             className="flex flex-col sm:flex-row justify-between items-start gap-6 pb-8 border-b border-neutral-100 last:border-b-0 lg:border-b-0"
           >
             {/* Left side text container */}
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 w-[30%]">
               <Card variant="borderless">
                 <CardHeader>
                   <CardAction>
@@ -49,7 +49,7 @@ function HorizontalCardGrid() {
             </div>
 
             {/* Right side image container (Responsive sizing) */}
-            <div className="relative w-full sm:w-[240px] aspect-[16/10] sm:aspect-square shrink-0 rounded-xl overflow-hidden">
+            <div className="relative w-full sm:w-[240px] aspect-[16/10] shrink-0 rounded-xl overflow-hidden">
               <Image
                 src={item.mediaUrl}
                 fill

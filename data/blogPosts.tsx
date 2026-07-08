@@ -46,7 +46,7 @@ export const BLOGPOSTS: BlogPost[] = [
     title: "Introducing Fobia",
     blogType: "Product",
     mediaType: "image",
-    mediaUrl: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80",
+    mediaUrl: "/blogPics/01-introducing-fobia.png",
     href: "/blog/1_introducing_fobia",
   },
 ]
