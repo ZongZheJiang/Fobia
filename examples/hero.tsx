@@ -10,7 +10,7 @@ import IconCarousel from "../examples/icon-carousel"
 
 function Hero() {
   const { theme } = useTheme()
-  const pixelColor = theme === "dark" ? "#ffffff" : "#000000"
+  const pixelColor = theme === "dark" ? "#808080" : "#808080"
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-background">

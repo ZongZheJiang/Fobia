@@ -65,11 +65,20 @@ export default function VideoDemo() {
                             transformOrigin: 'center center'
                         }}
                     >
-                        <VideoAutoplay
+                        {/* <VideoAutoplay
                             className="w-full h-full object-cover" 
                             youtubeId="eHHQaoEW30Q"
                             previewVideoUrl="null"
-                        />
+                        /> */}
+                        <video
+                            className="w-full h-full object-cover"
+                            loop
+                            playsInline
+                            controls
+                        >
+                            <source src="/fobia-demo-video-beta.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
 
