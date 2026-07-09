@@ -5,6 +5,6 @@ export interface DownloadCard {
     description: string,
     downloadLink1: string,
     downloadLink1Text: string,
-    downloadLink2:string,
+    downloadLink2: string,
     downloadLink2Text: string,
 }
