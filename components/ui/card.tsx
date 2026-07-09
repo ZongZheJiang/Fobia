@@ -10,7 +10,8 @@ const cardVariants = cva(
       variant: {
         default: "ring-1 ring-foreground/10",
         borderless: "ring-0 bg-foreground/5",
-        backdropBlur: "ring-1 ring-foreground/10 backdrop-blur-md shadow-xl"
+        borderless_transparent: "ring-0 bg-transparent",
+        backdropBlur: "ring-1 ring-foreground/10 backdrop-blur-md shadow-xl",
       },
     },
   }
@@ -23,6 +24,7 @@ const cardFooterVariants = cva(
       variant: {
         default: "bg-muted/50 border-t",
         borderless: "",
+        borderless_transparent: "",
       }
     }
   }

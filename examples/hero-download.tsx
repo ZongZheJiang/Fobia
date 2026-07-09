@@ -1,3 +1,4 @@
+import Link from "next/link"
 import PixelBlast from "../components/pixelblast"
 import { BackgroundBeams } from "../components/ui/background-beam"
 import { Button } from "../components/ui/button"
@@ -13,8 +14,12 @@ function HeroDownload() {
                     <h1 className="text-white text-4xl md:text-6xl font-bold mb-[5%]">Download Fobia Now</h1>
                 </div>
                 <div className="flex relative z-20">
-                    <Button variant={"modern"} className="bg-zinc-950 text-white hover:bg-zinc-800 mr-[2%]">Download for Apple Silicon</Button>
-                    <Button variant={"modern"} className="bg-zinc-950 text-white hover:bg-zinc-800">Download for Intel</Button>
+                    <Button variant={"modern"} className="bg-zinc-950 text-white hover:bg-zinc-800 mr-[2%]">
+                        <Link href="/download">Download for Apple Silicon</Link>
+                    </Button>
+                    <Button variant={"modern"} className="bg-zinc-950 text-white hover:bg-zinc-800">
+                        <Link href="/download">Download for Intel</Link>
+                    </Button>
                 </div>
             </div>
         </div>

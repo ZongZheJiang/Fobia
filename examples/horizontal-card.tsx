@@ -1,3 +1,5 @@
+// examples/horizontal-card.tsx
+
 import {
     Card,
     CardAction,
@@ -7,12 +9,23 @@ import {
   CardTitle,
 } from "../components/ui/card"
 
+import { BlogPost } from "../types/blogPost"
+
 import { Badge } from "@/components/ui/badge"
 import { Button } from "../components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import { FEATURED_BLOGPOST } from "../data/featuredBlogPost"    
+import { VariantProps } from "class-variance-authority"
 
-function HorizontalCard() {
+
+
+function HorizontalCard({cardProps}: {cardProps: BlogPost}) {
+    if (!cardProps) {
+        console.error("No cardProps provided to HorizontalCard component.");
+        return null; 
+    }
+
     return (
         <div className="flex w-[80%] justify-between items-start gap-8 my-8 mx-[10%]">
             <div className="w-[50%]">
@@ -21,13 +34,13 @@ function HorizontalCard() {
                         <CardAction>
                         <Badge variant="secondary">Featured</Badge>
                         </CardAction>
-                        <CardTitle>Introducing Fobia</CardTitle>
+                        <CardTitle>{cardProps.title}</CardTitle>
                         <CardDescription>
                         </CardDescription>
                     </CardHeader>
                     <CardFooter variant="borderless">
                         <Button className="w-full sm:w-auto px-6">
-                            <Link href="/blog/1_introducing_fobia">
+                            <Link href={cardProps.href}>
                                 View Blog Post
                             </Link>
                         </Button>
@@ -35,7 +48,7 @@ function HorizontalCard() {
                 </Card>
             </div>
             <Image
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            src={cardProps.mediaUrl} 
             width="400"
             height="200"
             alt="Sample Image"
