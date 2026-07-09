@@ -1,4 +1,4 @@
-import { NavigationMenuDemo } from "../../examples/navigation-menu"
+import { NavigationMenuDemo } from "../../examples/navigation-menu-beta"
 import Hero from "../../examples/hero"
 
 export default function HeroPage() {

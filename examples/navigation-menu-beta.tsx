@@ -42,9 +42,9 @@ export const NavigationMenuDemo = () => {
       <div className="mx-auto max-w-7xl px-4 flex items-center justify-between h-16">
         <NavigationMenu variant="dark">
           <NavigationMenuList variant="dark">
-            <NavigationMenuItem className="mx-2">
+            <NavigationMenuItem>
               <Link href="/">
-                <AnimatedGpuFanIcon size={28} color="var(--foreground)" animate speed={2} />
+                <AnimatedGpuFanIcon size={32} color="var(--foreground)" animate speed={2} />
               </Link>
             </NavigationMenuItem>
 
@@ -97,9 +97,6 @@ export const NavigationMenuDemo = () => {
 
         <div className="flex items-center gap-3">
           <ThemeSwitcher />
-          <Button className="mr-2">
-            <Link href="/download">Download</Link>
-          </Button>
         </div>
       </div>
     </header>
