@@ -2,12 +2,6 @@ import { NavbarItem } from "@/types/navbarItem"
 
 export const NAVBAR_RESOURCES: NavbarItem[] = [
   {
-    title: "Documentation",
-    href: "/documentation",
-    description:
-      "Description for Documentation",
-  },
-  {
     title: "Blog",
     href: "/blog",
     description:

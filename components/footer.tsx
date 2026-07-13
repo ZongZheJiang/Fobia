@@ -64,7 +64,6 @@ const defaultProps: FooterProps = {
       title: "Support",
       links: [
         // { name: "Help center", href: "#" },
-        { name: "Documentation", href: "/documentation" },
         // { name: "Status", href: "#" },
         { name: "Community", href: "/community" },
       ],
