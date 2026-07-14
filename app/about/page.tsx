@@ -1,69 +1,9 @@
 import { NavigationMenuDemo } from "@/examples/navigation-menu"
 import { Footer } from "@/components/footer"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-const VALUES = [
-    {
-        id: 1,
-        name: "Equity",
-        description:
-            "We believe everyone should have access to powerful AI tools to foster greater innovation and development in society by empowering even non-technical individuals to build anything.",
-    },
-    {
-        id: 2,
-        name: "Community",
-        description:
-            "We want to build a community that is curious and dares to dream — supporting each other in experimenting and testing new ideas with AI tools.",
-    },
-    {
-        id: 3,
-        name: "Transparency",
-        description:
-            "We are fully transparent with security, processes, and handling of consumer data.",
-    },
-]
-
-const FOUNDER = {
-    role: "Founder",
-    description: "Visionary behind Fobia, driving the mission to democratise AI for everyone.",
-}
-
-const TEAM = [
-    {
-        role: "Head of Technology",
-        description: "Leads engineering and infrastructure, ensuring Fobia stays reliable and on the cutting edge.",
-    },
-    {
-        role: "Head of Marketing",
-        description: "Shapes how Fobia communicates its value to the world and grows the community.",
-    },
-    {
-        role: "Head of Accounting",
-        description: "Keeps Fobia financially healthy so the team can focus on building.",
-    },
-]
-
-function AvatarPlaceholder({ size = 96 }: { size?: number }) {
-    return (
-        <div
-            style={{ width: size, height: size }}
-            className="rounded-full bg-muted flex items-center justify-center shrink-0"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style={{ width: size * 0.5, height: size * 0.5 }}
-                className="text-muted-foreground"
-            >
-                <path
-                    fillRule="evenodd"
-                    d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
-                    clipRule="evenodd"
-                />
-            </svg>
-        </div>
-    )
-}
+import { ABOUT_VALUES } from "@/data/aboutValues"
+import { ABOUT_FOUNDER, ABOUT_TEAM } from "@/data/aboutTeam"
 
 function About() {
     return (
@@ -110,7 +50,7 @@ function About() {
                     Our Values
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
-                    {VALUES.map((value) => (
+                    {ABOUT_VALUES.map((value) => (
                         <div
                             key={value.id}
                             className="flex flex-col gap-3 p-6 rounded-xl border border-border bg-card"
@@ -130,20 +70,26 @@ function About() {
 
                 {/* Founder — centred, larger avatar */}
                 <div className="flex flex-col items-center text-center gap-4 mb-16">
-                    <AvatarPlaceholder size={112} />
+                    <Avatar className="size-32">
+                        <AvatarImage src="/fine_shyt.jpeg" />
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">
-                            {FOUNDER.role}
+                            {ABOUT_FOUNDER.role}
                         </p>
-                        <p className="text-sm text-muted-foreground max-w-xs">{FOUNDER.description}</p>
+                        <p className="text-sm text-muted-foreground max-w-xs">{ABOUT_FOUNDER.description}</p>
                     </div>
                 </div>
 
                 {/* Rest of team — smaller avatars */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-3xl w-full">
-                    {TEAM.map((member) => (
+                {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 max-w-3xl w-full">
+                    {ABOUT_TEAM.map((member) => (
                         <div key={member.role} className="flex flex-col items-center text-center gap-4">
-                            <AvatarPlaceholder size={72} />
+                            <Avatar className="size-32">
+                                <AvatarImage src="http://www.w3.org/2000/svg" />
+                                <AvatarFallback>CN</AvatarFallback>
+                            </Avatar>
                             <div>
                                 <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-1">
                                     {member.role}
@@ -152,7 +98,7 @@ function About() {
                             </div>
                         </div>
                     ))}
-                </div>
+                </div> */}
             </section>
 
             <Footer />

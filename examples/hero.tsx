@@ -50,7 +50,7 @@ function Hero() {
             variant="modern"
             className="bg-foreground text-background hover:bg-foreground/90 text-lg px-10 py-7 rounded-full"
           >
-            <Link href="/download">Download</Link>
+            <Link href="/download">Download Beta</Link>
           </Button>
         </div>
 

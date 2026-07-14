@@ -44,39 +44,22 @@ const defaultProps: FooterProps = {
       title: "Product",
       links: [
         { name: "Overview", href: "/" },
-        // { name: "Pricing", href: "#" },
-        // { name: "Marketplace", href: "#" },
         { name: "Download", href: "/download" },
-        // { name: "Integrations", href: "#" },
       ],
     },
     {
       title: "Company",
       links: [
         { name: "About", href: "/about" },
-        // { name: "Team", href: "#" },
         { name: "Blog", href: "/blog" },
-        // { name: "Careers", href: "#" },
-        // { name: "Contact", href: "#" },
       ],
     },
     {
       title: "Support",
       links: [
-        // { name: "Help center", href: "#" },
-        // { name: "Status", href: "#" },
         { name: "Community", href: "/community" },
       ],
     },
-    // {
-    //   title: "Resources",
-    //   links: [
-    //     { name: "Guides", href: "#" },
-    //     { name: "Templates", href: "#" },
-    //     { name: "Sales", href: "#" },
-    //     { name: "Advertise", href: "#" },
-    //   ],
-    // },
   ],
   copyright: "© 2024 Shadcnblocks.com. All rights reserved.",
   legalLinks: [
