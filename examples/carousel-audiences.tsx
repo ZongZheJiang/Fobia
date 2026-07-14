@@ -46,7 +46,6 @@ function CarouselBlog() {
           className="w-full mb-8"
           opts={{
             align: "start",
-            loop: true,
           }}
         >
           <CarouselContent className="-ml-6">
@@ -102,6 +101,8 @@ function CarouselBlog() {
                 </CarouselItem>
               )
             })}
+            {/* Trailing spacer so the last real slide can reach a left-aligned snap */}
+            <div className="shrink-0 basis-[25%] md:basis-[30%] pl-6" />
           </CarouselContent>
             {/* Navigation Buttons placed inside the active layout */}
             <CarouselPrevious />

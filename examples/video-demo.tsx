@@ -56,20 +56,15 @@ export default function VideoDemo() {
                         position: 'relative'
                     }}
                 >
-                    <div 
-                        className="box" 
-                        style={{ 
-                            margin: 'auto', 
-                            width: '40vw', 
-                            height: '40vh', 
+                    <div
+                        className="box"
+                        style={{
+                            margin: 'auto',
+                            width: 'clamp(280px, 40vw, 600px)',
+                            height: 'calc(clamp(280px, 40vw, 600px) * 9 / 16)',
                             transformOrigin: 'center center'
                         }}
                     >
-                        {/* <VideoAutoplay
-                            className="w-full h-full object-cover" 
-                            youtubeId="eHHQaoEW30Q"
-                            previewVideoUrl="null"
-                        /> */}
                         <video
                             className="w-full h-full object-cover"
                             loop

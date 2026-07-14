@@ -13,8 +13,8 @@ import { BLOGPOSTS } from "@/data/blogPosts"
 
 function CarouselBlog() {
   return (
-    <div>
-        <div className="text-left mt-20 mx-40">
+    <div className="mx-[10%]">
+        <div className="text-left mt-20">
             <h2 className="text-3xl font-bold">Blog Posts</h2>
         </div>
         <div className="container mx-auto mt-20 flex items-center justify-center">
@@ -28,7 +28,7 @@ function CarouselBlog() {
             >
                 <CarouselContent className="w-full">
                     {BLOGPOSTS.map((post) => (
-                        <CarouselItem key={post.id} className="basis-1/3">
+                        <CarouselItem key={post.id} className="md:basis-1/3">
                             <div className="p-1">
                             <Card className="overflow-hidden">
                                 <CardContent className="flex aspect-video items-center justify-center p-0 relative bg-muted">
