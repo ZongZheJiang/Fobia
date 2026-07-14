@@ -1,18 +1,19 @@
 // import { NavigationMenuDemo } from "../../examples/navigation-menu"
 import { NavigationMenuDemo } from "../../examples/navigation-menu-beta"
-import { Footer } from "../../components/footer"
 
 import DownloadCards from "../../examples/download-cards"
+
+export const dynamic = "force-dynamic"
 
 async function getLatestVersion() {
   try {
     const res = await fetch("https://gateway.fobia.ai/v1/download", { 
-      next: { revalidate: 60 } // Cache for 60 seconds
+      cache: "no-store",
     });
     if (!res.ok) return "Latest";
     const data = await res.json();
     return data.version || "Latest";
-  } catch (e) {
+  } catch {
     return "Latest";
   }
 }
