@@ -33,10 +33,10 @@ export default function VideoDemo() {
             scale: targetScale,
             scrollTrigger: {
                 trigger: panel,
-                start: "top center",
-                endTrigger: ".end-panel",
+                start: "top bottom",
+                endTrigger: "top center",
                 end: "+=200",
-                scrub: true,
+                scrub: 1,
                 // markers: true
             }
         });

@@ -45,6 +45,7 @@ export const BLOGPOSTS: BlogPost[] = [
     id: 6,
     title: "Introducing Fobia",
     blogType: "Product",
+    description: "The first reveal of Fobia, our idea.",
     mediaType: "image",
     mediaUrl: "/blogPics/01-introducing-fobia.png",
     href: "/blog/1_introducing_fobia",

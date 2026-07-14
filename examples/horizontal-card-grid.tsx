@@ -30,11 +30,11 @@ function HorizontalCardGrid() {
               <Card variant="borderless">
                 <CardHeader>
                   <CardAction>
-                    {/* <Badge variant="secondary">{item.tag}</Badge> */}
+                    <Badge variant="secondary">{item.blogType}</Badge>
                   </CardAction>
                   <CardTitle>{item.title}</CardTitle>
                   <CardDescription className="line-clamp-3">
-                    {item.blogType}
+                    {item.description}
                   </CardDescription>
                 </CardHeader>
                 {/* Overriding the default CardFooter background and borders downstream */}

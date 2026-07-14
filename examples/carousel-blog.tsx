@@ -55,7 +55,7 @@ function CarouselBlog() {
                             <div className="mt-4 space-y-2">
                                 <h3 className="text-lg font-bold line-clamp-1">{post.title}</h3>
                                 <p className="text-sm text-neutral-500 line-clamp-2 min-h-[40px]">
-                                {post.blogType}
+                                {post.description}
                                 </p>
                                 <Button className="w-full" variant="secondary">
                                     <Link href={post.href}>Go to Blogpost</Link>

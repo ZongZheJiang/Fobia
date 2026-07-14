@@ -32,10 +32,11 @@ function HorizontalCard({cardProps}: {cardProps: BlogPost}) {
                 <Card variant="borderless">
                     <CardHeader>
                         <CardAction>
-                        <Badge variant="secondary">Featured</Badge>
+                        <Badge variant="secondary">{cardProps.blogType}</Badge>
                         </CardAction>
-                        <CardTitle>{cardProps.title}</CardTitle>
+                        <CardTitle className="text-xl/12 md:text-3xl/16">{cardProps.title}</CardTitle>
                         <CardDescription>
+                            {cardProps.description}
                         </CardDescription>
                     </CardHeader>
                     <CardFooter variant="borderless">
