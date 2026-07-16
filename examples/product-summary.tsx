@@ -1,6 +1,3 @@
-import { Card } from "../components/ui/card"
-import { AspectRatio } from "../components/ui/aspect-ratio"
-
 function ProductSummary() {
     return (
         <div className="flex flex-col gap-16 items-center mx-[10%]">

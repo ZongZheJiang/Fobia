@@ -10,6 +10,7 @@ import {
   CarouselPrevious,
 } from "../components/ui/carousel"
 import { ChevronRight } from "lucide-react"
+import Image from "next/image"
 
 // Use the same dataset structure
 import { AUDIENCEPOSTS } from "@/data/audiencePosts"
@@ -70,8 +71,10 @@ function CarouselBlog() {
                           muted
                         />
                       ) : (
-                        <img
+                        <Image
                           src={post.mediaUrl}
+                          alt="Picture of Audience"
+                          fill={true}
                           className="h-full w-full object-cover"
                         />
                       )}

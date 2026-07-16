@@ -8,6 +8,7 @@ import {
 } from "../components/ui/carousel"
 import { Button } from "../components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 
 import { BLOGPOSTS } from "@/data/blogPosts"
 
@@ -42,9 +43,10 @@ function CarouselBlog() {
                                     muted
                                     />
                                 ) : (
-                                    <img
+                                    <Image
                                     src={post.mediaUrl}
                                     alt={post.title}
+                                    fill={true}
                                     className="h-full w-full object-cover"
                                     loading="lazy"
                                     />
