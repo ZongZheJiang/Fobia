@@ -4,6 +4,7 @@
 import { useRef } from 'react';
 import { gsap, ScrollTrigger } from '@/lib/gsap'; 
 import { useGSAP } from '@gsap/react';
+import Image from "next/image";
 import VideoAutoplay from "../components/ui/video-autoplay";
 
 export default function VideoDemo() {
@@ -65,7 +66,12 @@ export default function VideoDemo() {
                             transformOrigin: 'center center'
                         }}
                     >
-                        <video
+                        <Image 
+                            src="/cover-image.jpeg"
+                            alt="cover-image"
+                            fill={true}
+                        />
+                        {/* <video
                             className="w-full h-full object-cover"
                             loop
                             playsInline
@@ -73,7 +79,7 @@ export default function VideoDemo() {
                         >
                             <source src="/fobia-demo-video-beta.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
-                        </video>
+                        </video> */}
                     </div>
                 </div>
 

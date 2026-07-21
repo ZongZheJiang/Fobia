@@ -4,7 +4,7 @@ function ProductSummary() {
             <h2
             className="text-2xl md:text-4xl font-bold mr-[10%] my-8"
             >
-                Fobia provides free decentralised computing power to empower communities of builders and coders.
+                Fobia empowers everyone, technical and non-technical users alike, to build their dream AI solution through a unifed platform.
             </h2>
             <div className="container w-full flex flex-col md:flex-row justify-between items-center gap-8">
                 <h2 className="text-md md:text-xl w-full md:w-[35%]">A variety of AI Applications, available at your fingertips.</h2>
