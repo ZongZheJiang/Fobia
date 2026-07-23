@@ -23,6 +23,7 @@ export interface CardSwapProps {
   delay?: number;
   pauseOnHover?: boolean;
   onCardClick?: (idx: number) => void;
+  onCardChange?: (idx: number) => void;
   skewAmount?: number;
   easing?: 'linear' | 'elastic';
   children: ReactNode;
@@ -73,6 +74,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
   delay = 5000,
   pauseOnHover = false,
   onCardClick,
+  onCardChange,
   skewAmount = 6,
   easing = 'elastic',
   children
@@ -105,6 +107,11 @@ const CardSwap: React.FC<CardSwapProps> = ({
   const intervalRef = useRef<number>(0);
   const container = useRef<HTMLDivElement>(null);
 
+  // Kept in a ref so the animation effect below doesn't need to re-run
+  // (and restart the deck) whenever the parent passes a new callback identity.
+  const onCardChangeRef = useRef(onCardChange);
+  onCardChangeRef.current = onCardChange;
+
   useEffect(() => {
     const total = refs.length;
     refs.forEach((r, i) => placeNow(r.current!, makeSlot(i, cardDistance, verticalDistance, total), skewAmount));
@@ -113,6 +120,8 @@ const CardSwap: React.FC<CardSwapProps> = ({
       if (order.current.length < 2) return;
 
       const [front, ...rest] = order.current;
+      // rest[0] is the card being promoted to the front slot this swap.
+      onCardChangeRef.current?.(rest[0]);
       const elFront = refs[front].current!;
       const tl = gsap.timeline();
       tlRef.current = tl;
