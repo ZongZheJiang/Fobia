@@ -63,13 +63,15 @@ export default function VideoDemo() {
                             margin: 'auto',
                             width: 'clamp(280px, 40vw, 600px)',
                             height: 'calc(clamp(280px, 40vw, 600px) * 9 / 16)',
-                            transformOrigin: 'center center'
+                            transformOrigin: 'center center',
+                            position: 'relative'
                         }}
                     >
                         <Image 
                             src="/cover-image.jpeg"
                             alt="cover-image"
                             fill={true}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                         />
                         {/* <video
                             className="w-full h-full object-cover"

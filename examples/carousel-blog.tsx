@@ -47,6 +47,7 @@ function CarouselBlog() {
                                     src={post.mediaUrl}
                                     alt={post.title}
                                     fill={true}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                                     className="h-full w-full object-cover"
                                     loading="lazy"
                                     />

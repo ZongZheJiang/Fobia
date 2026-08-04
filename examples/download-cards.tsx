@@ -44,7 +44,7 @@ function DownloadCards() {
                 </div>
               )}
               <div className="flex flex-col items-center gap-3 min-h-[140px] justify-start pt-4">
-                <Image src={card.imageUrl} alt={`${card.title} logo`} width={64} height={64} className="object-contain dark:brightness-0 dark:invert" />
+                <Image src={card.imageUrl} alt={`${card.title} logo`} width={64} height={64} style={{ width: 'auto', height: 'auto' }} className="w-auto h-auto object-contain dark:brightness-0 dark:invert" />
                 <h3 className="text-xl font-bold text-foreground">{card.title}</h3>
                 <p className="text-sm text-muted-foreground">{card.description}</p>
               </div>

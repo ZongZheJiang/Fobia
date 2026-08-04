@@ -32,7 +32,7 @@ function IconStrip() {
       {ICONS.map(({ src, label }, i) => (
         <div key={i} className="flex flex-col items-center gap-2 min-w-[88px]">
           <div className="h-14 w-14 rounded-2xl border border-border flex items-center justify-center bg-foreground/5 p-2">
-            <Image src={src} alt={label} width={40} height={40} className="object-contain" />
+            <Image src={src} alt={label} width={40} height={40} style={{ width: 'auto', height: 'auto' }} className="w-auto h-auto object-contain" />
           </div>
           <span className="text-xs text-muted-foreground font-medium">{label}</span>
         </div>
